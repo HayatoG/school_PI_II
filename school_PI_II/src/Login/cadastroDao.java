@@ -38,13 +38,59 @@ public class cadastroDao {
             st.setString(1, cadastro.getRa());
             st.setString(2, cadastro.getNome_estudante());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
 
         } finally {
             con.close();
             st.close();
         }
     }
+
+    public void inserirEstudantelEmail(cadastroEstudanteDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO email(email)"
+                    + "VALUES (?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getEmail());
+            st.executeUpdate();
+            System.out.println("Inserido com sucesso!");
+
+            String sqlEmail = "INSERT INTO estudanteemail(id_estudanteemail,id_email)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+    
+    public void inserirEstudantelTelefone(cadastroEstudanteDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO telefone(telefone,numero)"
+                    + "VALUES (?,?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getTelefone());
+            st.setString(2, cadastro.getNumero());
+            st.executeUpdate();
+            System.out.println("Inserido com sucesso!");
+
+            String sqlEmail = "INSERT INTO estudantetelefone(id_estudantetelefone,id_telefone)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+    
+    
 
     public void inserirEscola(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
         try {
@@ -56,13 +102,59 @@ public class cadastroDao {
             st.setString(1, cadastro.getNome_escola());
             st.setString(2, cadastro.getEndereco());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
 
         } finally {
             con.close();
             st.close();
         }
     }
+    
+     public void inserirEscolaEmail(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO email(email)"
+                    + "VALUES (?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getEmail());
+            st.executeUpdate();
+
+            String sqlEmail = "INSERT INTO escolaemail(id_escolaemail,id_email)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
+            System.out.println("Inserido com sucesso!");
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+     
+      public void inserirEscolaTelefone(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO telefone(telefone,numero)"
+                    + "VALUES (?,?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getTelefone());
+            st.setString(2, cadastro.getNumero());
+            st.executeUpdate();
+            System.out.println("Inserido com sucesso!");
+
+            String sqlEmail = "INSERT INTO escolatelefone(id_escolatelefone,id_telefone)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+
+
 
     public void inserirResponsavel(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
         try {
@@ -74,8 +166,53 @@ public class cadastroDao {
             st.setString(1, cadastro.getNome_responsavel());
             st.setString(2, cadastro.getCpf());
             st.executeUpdate();
+            
+
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+
+    public void inserirResponsavelEmail(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO email(email)"
+                    + "VALUES (?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getEmail());
+            st.executeUpdate();
+
+            String sqlEmail = "INSERT INTO responsavelemail(id_responsavelemail,id_email)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
+            System.out.println("Inserido com sucesso!");
+        } finally {
+            con.close();
+            st.close();
+        }
+    }
+    
+     public void inserirResponsavelTelefone(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
+        try {
+
+            String sql = "INSERT INTO telefone(telefone,numero)"
+                    + "VALUES (?,?)";
+
+            st = con.prepareStatement(sql);
+            st.setString(1, cadastro.getTelefone());
+            st.setString(2, cadastro.getNumero());
+            st.executeUpdate();
             System.out.println("Inserido com sucesso!");
 
+            String sqlEmail = "INSERT INTO responsaveltelefone(id_responsaveltelefone,id_telefone)"
+                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
+
+            st = con.prepareStatement(sqlEmail);
+            st.executeUpdate();
         } finally {
             con.close();
             st.close();

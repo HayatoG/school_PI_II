@@ -44,12 +44,18 @@ public class loginMetodos {
         switch (decisao) {
             case 1:
                 cadastroEscola();
+                cadastroEscolaEmail();
+                cadastroEscolaTelefone();
                 telaInicial();
             case 2:
                 cadastroEstudante();
+                cadastroEstudanteEmail();
+                cadastroEstudanteTelefone();
                 telaInicial();
             case 3:
                 cadastroResponsavel();
+                cadastroResponsavelEmail();
+                cadastroResponsavelTelefone();
                 telaInicial();
 
         }
@@ -77,6 +83,44 @@ public class loginMetodos {
         }
     }
 
+    public static void cadastroEstudanteEmail() {
+        cadastroDao dao = new cadastroDao();
+        cadastroEstudanteDTO dto = new cadastroEstudanteDTO();
+        try {
+            Connection con = dao.iniciar();
+
+            System.out.println("\nInsira o email:");
+            String email = s.next();
+            dto.setEmail(email);
+
+            dao.inserirEstudantelEmail(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public static void cadastroEstudanteTelefone() {
+        cadastroDao dao = new cadastroDao();
+        cadastroEstudanteDTO dto = new cadastroEstudanteDTO();
+        try {
+            Connection con = dao.iniciar();
+
+            System.out.println("\nInsira o telefone:");
+            String telefone = s.next();
+            dto.setTelefone(telefone);
+
+            System.out.println("\nInsira o número celular:");
+            String celular = s.next();
+            dto.setNumero(celular);
+
+            dao.inserirEstudantelTelefone(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
     public static void cadastroEscola() {
         cadastroDao dao = new cadastroDao();
         cadastroEscolaDTO dto = new cadastroEscolaDTO();
@@ -88,7 +132,7 @@ public class loginMetodos {
             String nome = s.next();
             dto.setNome_escola(nome);
 
-            System.out.println("\nInsira o endereço:");
+            System.out.println("\nInsira a região:");
             String endereço = s.next();
             dto.setEndereco(endereço);
 
@@ -99,6 +143,47 @@ public class loginMetodos {
         }
 
     }
+
+    public static void cadastroEscolaEmail() {
+        cadastroDao dao = new cadastroDao();
+        cadastroEscolaDTO dto = new cadastroEscolaDTO();
+        try {
+            Connection con = dao.iniciar();
+
+            System.out.println("\nInsira o email da escola:");
+            String email = s.next();
+            dto.setEmail(email);
+
+            dao.inserirEscolaEmail(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
+    
+    public static void cadastroEscolaTelefone() {
+        cadastroDao dao = new cadastroDao();
+        cadastroEscolaDTO dto = new cadastroEscolaDTO();
+        try {
+            Connection con = dao.iniciar();
+
+            System.out.println("\nInsira o telefone:");
+            String telefone = s.next();
+            dto.setTelefone(telefone);
+
+            System.out.println("\nInsira o número celular:");
+            String celular = s.next();
+            dto.setNumero(celular);
+
+            dao.inserirEscolaTelefone(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+   
 
     public static void cadastroResponsavel() {
         cadastroDao dao = new cadastroDao();
@@ -120,7 +205,43 @@ public class loginMetodos {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+    }
 
+    public static void cadastroResponsavelEmail() {
+        cadastroDao dao = new cadastroDao();
+        cadastroResponsavelDTO dto = new cadastroResponsavelDTO();
+        try {
+            Connection con = dao.iniciar();
 
+            System.out.println("\nInsira o email do responsável:");
+            String email = s.next();
+            dto.setEmail(email);
+
+            dao.inserirResponsavelEmail(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public static void cadastroResponsavelTelefone() {
+        cadastroDao dao = new cadastroDao();
+        cadastroResponsavelDTO dto = new cadastroResponsavelDTO();
+        try {
+            Connection con = dao.iniciar();
+
+            System.out.println("\nInsira o telefone:");
+            String telefone = s.next();
+            dto.setTelefone(telefone);
+
+            System.out.println("\nInsira o número celular:");
+            String celular = s.next();
+            dto.setNumero(celular);
+
+            dao.inserirResponsavelTelefone(dto, con);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

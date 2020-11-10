@@ -10,7 +10,8 @@ package Login;
  * @author olive
  */
 public class cadastroEstudanteDTO {
-    private String ra, nome_estudante;
+
+    private String ra, nome_estudante, email, telefone, numero;
     private int id_estudante;
 
     public void setRa(String ra) {
@@ -36,4 +37,33 @@ public class cadastroEstudanteDTO {
     public int getId() {
         return id_estudante;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getId_estudante() {
+        return id_estudante;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
 }

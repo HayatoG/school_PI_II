@@ -10,7 +10,7 @@ package Login;
  * @author olive
  */
 public class cadastroEscolaDTO {
-    private String  nome_escola,endereco;
+    private String  nome_escola,endereco,email,telefone, numero;
     private int id_escola;
 
     public String getNome_escola() {
@@ -35,6 +35,30 @@ public class cadastroEscolaDTO {
 
     public void setId_escola(int id_escola) {
         this.id_escola = id_escola;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
     
     

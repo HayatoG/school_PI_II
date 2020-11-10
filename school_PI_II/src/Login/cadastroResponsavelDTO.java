@@ -10,7 +10,7 @@ package Login;
  * @author olive
  */
 public class cadastroResponsavelDTO {
-    private String nome_responsavel, cpf;
+    private String nome_responsavel, cpf, email,  telefone, numero;
     private int id_responsavel;
 
     public String getNome_responsavel() {
@@ -36,7 +36,28 @@ public class cadastroResponsavelDTO {
     public void setId_responsavel(int id_responsavel) {
         this.id_responsavel = id_responsavel;
     }
-    
-    
-    
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 }
