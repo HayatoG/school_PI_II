@@ -19,7 +19,7 @@ public class cadastroDao {
 
     private final String USUARIO = "root";
     private final String SENHA = "carecapi";
-    private final String URL = "jdbc:mysql://localhost:3306/school_pi";
+    private final String URL = "jdbc:mysql://localhost:3306/school_pi?useTimezone=true&serverTimezone=UTC&useSSL=false";
     private Connection con = null;
     private PreparedStatement st;
     private ResultSet rs;
@@ -54,7 +54,6 @@ public class cadastroDao {
             st = con.prepareStatement(sql);
             st.setString(1, cadastro.getEmail());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
 
             String sqlEmail = "INSERT INTO estudanteemail(id_estudanteemail,id_email)"
                     + "VALUES (DEFAULT,LAST_INSERT_ID())";
@@ -77,7 +76,7 @@ public class cadastroDao {
             st.setString(1, cadastro.getTelefone());
             st.setString(2, cadastro.getNumero());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
+            System.out.println("\nInserido com sucesso!");
 
             String sqlEmail = "INSERT INTO estudantetelefone(id_estudantetelefone,id_telefone)"
                     + "VALUES (DEFAULT,LAST_INSERT_ID())";
@@ -124,7 +123,6 @@ public class cadastroDao {
 
             st = con.prepareStatement(sqlEmail);
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
         } finally {
             con.close();
             st.close();
@@ -141,7 +139,7 @@ public class cadastroDao {
             st.setString(1, cadastro.getTelefone());
             st.setString(2, cadastro.getNumero());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
+            System.out.println("\nInserido com sucesso!");
 
             String sqlEmail = "INSERT INTO escolatelefone(id_escolatelefone,id_telefone)"
                     + "VALUES (DEFAULT,LAST_INSERT_ID())";
@@ -189,7 +187,6 @@ public class cadastroDao {
 
             st = con.prepareStatement(sqlEmail);
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
         } finally {
             con.close();
             st.close();
@@ -206,7 +203,7 @@ public class cadastroDao {
             st.setString(1, cadastro.getTelefone());
             st.setString(2, cadastro.getNumero());
             st.executeUpdate();
-            System.out.println("Inserido com sucesso!");
+            System.out.println("\nInserido com sucesso!");
 
             String sqlEmail = "INSERT INTO responsaveltelefone(id_responsaveltelefone,id_telefone)"
                     + "VALUES (DEFAULT,LAST_INSERT_ID())";

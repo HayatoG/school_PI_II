@@ -90,12 +90,6 @@ id_escolatelefone int not null auto_increment,
 id_telefone int,
 primary key(id_escolatelefone)
 );
-
-
-select * from escolatelefone;
-select * from telefone;
-select * from email;
-
-#drop database school_pi;*/
+*/
     
 }
