@@ -27,7 +27,7 @@ public class cadastroLogin {
             case 1:
                 cadastroLogin.login();
             case 2:
-                cadastroLogin.direcaoCadastro();
+               cadastroLogin.direcaoCadastro();
         }
     }
 
@@ -56,8 +56,18 @@ public class cadastroLogin {
 
         }
     }
-    
-    public static void login() {
 
+    public static void login() {
+        
+        System.out.println("Login: ");
+        String login = s.next();
+        
+        System.out.println("Senha: ");
+        String senha = s.next();
+        
+        if (login.equals("adm") && senha.equals("123")) {
+            System.out.println("Logado!");
+            responsavelConsulta.consultaTeste.teste();
+        }
     }
 }
