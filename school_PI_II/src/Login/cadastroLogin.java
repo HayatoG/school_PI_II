@@ -34,21 +34,16 @@ public class cadastroLogin {
     public static void direcaoCadastro() {
         cadastroDao dao = new cadastroDao();
 
-        System.out.println("\nVocê é: (1) Escola | (2) Estudante | (3) Responsável");
+        System.out.println("\nVocê é:(1) Estudante | (2) Responsável");
         int decisao = s.nextInt();
 
         switch (decisao) {
             case 1:
-                escolaMetodos.cadastroEscola();
-                escolaMetodos.cadastroEscolaEmail();
-                escolaMetodos.cadastroEscolaTelefone();
-                telaInicial();
-            case 2:
                 estudanteMetodos.cadastroEstudante();
                 estudanteMetodos.cadastroEstudanteEmail();
                 estudanteMetodos.cadastroEstudanteTelefone();
                 telaInicial();
-            case 3:
+            case 2:
                 responsavelMetodos.cadastroResponsavel();
                 responsavelMetodos.cadastroResponsavelEmail();
                 responsavelMetodos.cadastroResponsavelTelefone();

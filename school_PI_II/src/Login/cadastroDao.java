@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -65,7 +67,7 @@ public class cadastroDao {
             st.close();
         }
     }
-    
+
     public void inserirEstudantelTelefone(cadastroEstudanteDTO cadastro, Connection con) throws SQLException {
         try {
 
@@ -88,72 +90,6 @@ public class cadastroDao {
             st.close();
         }
     }
-    
-    
-
-    public void inserirEscola(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
-        try {
-
-            String sql = "INSERT INTO escola(nome_escola,endereco) "
-                    + "VALUES (?,?)";
-
-            st = con.prepareStatement(sql);
-            st.setString(1, cadastro.getNome_escola());
-            st.setString(2, cadastro.getEndereco());
-            st.executeUpdate();
-
-        } finally {
-            con.close();
-            st.close();
-        }
-    }
-    
-     public void inserirEscolaEmail(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
-        try {
-
-            String sql = "INSERT INTO email(email)"
-                    + "VALUES (?)";
-
-            st = con.prepareStatement(sql);
-            st.setString(1, cadastro.getEmail());
-            st.executeUpdate();
-
-            String sqlEmail = "INSERT INTO escolaemail(id_escolaemail,id_email)"
-                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
-
-            st = con.prepareStatement(sqlEmail);
-            st.executeUpdate();
-        } finally {
-            con.close();
-            st.close();
-        }
-    }
-     
-      public void inserirEscolaTelefone(cadastroEscolaDTO cadastro, Connection con) throws SQLException {
-        try {
-
-            String sql = "INSERT INTO telefone(telefone,numero)"
-                    + "VALUES (?,?)";
-
-            st = con.prepareStatement(sql);
-            st.setString(1, cadastro.getTelefone());
-            st.setString(2, cadastro.getNumero());
-            st.executeUpdate();
-            System.out.println("\nInserido com sucesso!");
-
-            String sqlEmail = "INSERT INTO escolatelefone(id_escolatelefone,id_telefone)"
-                    + "VALUES (DEFAULT,LAST_INSERT_ID())";
-
-            st = con.prepareStatement(sqlEmail);
-            st.executeUpdate();
-        } finally {
-            con.close();
-            st.close();
-        }
-    }
-
-
-
     public void inserirResponsavel(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
         try {
 
@@ -164,7 +100,6 @@ public class cadastroDao {
             st.setString(1, cadastro.getNome_responsavel());
             st.setString(2, cadastro.getCpf());
             st.executeUpdate();
-            
 
         } finally {
             con.close();
@@ -192,8 +127,8 @@ public class cadastroDao {
             st.close();
         }
     }
-    
-     public void inserirResponsavelTelefone(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
+
+    public void inserirResponsavelTelefone(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
         try {
 
             String sql = "INSERT INTO telefone(telefone,numero)"
@@ -215,5 +150,4 @@ public class cadastroDao {
             st.close();
         }
     }
-
 }
