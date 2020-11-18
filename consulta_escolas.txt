@@ -1,0 +1,11 @@
+SELECT ID_ESCOLA, NOMESC FROM ESCOLA;
+SELECT `Nome Escola`, Ddd, Fone1, Fone2, Email, Bairro, Municipio, Distrito, Zona from telefonos WHERE `Nome Escola` LIKE '%Penitenciaria%';
+DELETE FROM escolafull WHERE `Nome Escola` LIKE '%Penitenciaria%';
+
+SELECT ID_ESCOLA, NOMESC FROM escola WHERE DISTR = "GRAJAU" OR DISTR = "PARELHEIROS" OR DISTR = "CIDADE DUTRA";
+SELECT ID_ESCOLA, NOMESC FROM escola WHERE DISTR = "PARELHEIROS";
+SELECT ID_ESCOLA, NOMESC FROM escola WHERE DISTR = "CIDADE DUTRA";
+
+SELECT `Nome Escola`, Ddd, Fone1, Fone2, Email from escolafull WHERE Distrito = "GRAJAU" OR Distrito = "PARELHEIROS" OR Distrito = "CIDADE DUTRA";
+
+SELECT * FROM escolafull;
