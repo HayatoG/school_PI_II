@@ -62,7 +62,7 @@ public class cadastroLogin {
         
         if (login.equals("adm") && senha.equals("123")) {
             System.out.println("Logado!");
-            responsavelConsulta.consultaTeste.teste();
+            Login.consultaTeste.teste();
         }
     }
 }

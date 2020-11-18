@@ -10,7 +10,8 @@ package scriptBD;
  * @author olive
  */
 public class scriptBD {
-    /*create database if not exists school_pi;
+    /*#drop database school_pi;
+create database if not exists school_pi;
 use school_pi;
 
 create table login  (
@@ -27,18 +28,29 @@ nome_estudante varchar(40),
 primary key(id_estudante)
 );
 
-create table escola (
-id_escola int not null auto_increment,
-nome_escola varchar(40),
-endereco varchar(40),
-primary key(id_escola)
-);
-
 create table responsavel (
 id_responsavel int not null auto_increment,
 nome_responsavel varchar(40),
 cpf varchar(40),
 primary key(id_responsavel)
+);
+
+create table escola (
+ID_Escola int not null auto_increment,
+DiretoriaEnsino varchar(50),
+NomeEscola varchar(100),
+Municipio varchar(50),
+Bairro varchar(50),
+Distrito varchar(50),
+CEP int,
+Complemento varchar(50),
+Endereco varchar(50),
+Numero int,
+Ddd int, 
+Fone1 int,
+Fone2 int,
+Email varchar(50),
+primary key (id_escola)
 );
 
 create table email (
@@ -90,6 +102,7 @@ id_escolatelefone int not null auto_increment,
 id_telefone int,
 primary key(id_escolatelefone)
 );
+
 */
     
 }

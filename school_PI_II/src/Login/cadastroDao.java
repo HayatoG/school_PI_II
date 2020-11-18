@@ -90,6 +90,7 @@ public class cadastroDao {
             st.close();
         }
     }
+
     public void inserirResponsavel(cadastroResponsavelDTO cadastro, Connection con) throws SQLException {
         try {
 
@@ -149,5 +150,41 @@ public class cadastroDao {
             con.close();
             st.close();
         }
+    }
+
+    
+     public List<cadastroEscolaDTO> ListarParelheiros(Connection con) throws SQLException {
+        
+        List<cadastroEscolaDTO> lista = new ArrayList<cadastroEscolaDTO>();
+        
+        try {            
+            
+            String sql = "SELECT * FROM escola WHERE Distrito = \"Parelheiros\"";
+            st = con.prepareStatement(sql);
+            rs = st.executeQuery();
+            
+            cadastroEscolaDTO escola;
+            
+            while (rs.next()) {
+                escola = new cadastroEscolaDTO();
+                escola.setId_escola(rs.getInt("ID_Escola"));
+                escola.setDiretoriaEnsino(rs.getString("DiretoriaEnsino"));
+                escola.setNomeEscola(rs.getString("NomeEscola"));
+                escola.setMunicipio(rs.getString("Municipio"));
+                escola.setBairro(rs.getString("Bairro"));
+                escola.setDistrito(rs.getString("Distrito"));
+                escola.setCEP(rs.getInt("CEP"));
+                escola.setComplemento(rs.getString("Complemento"));
+                escola.setEndereco(rs.getString("Endereco"));
+                escola.setNumero(rs.getInt("Numero"));
+                escola.setDdd(rs.getInt("Ddd"));
+                escola.setFone1(rs.getInt("Fone1"));
+                escola.setFone2(rs.getInt("Fone2"));
+                escola.setEmail(rs.getString("Email"));
+                lista.add(escola);
+            }
+        } finally {
+        }
+        return lista;
     }
 }
