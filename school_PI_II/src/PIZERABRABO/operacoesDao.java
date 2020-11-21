@@ -192,7 +192,7 @@ public class operacoesDao {
 
         try {
 
-            String sql = "SELECT * FROM escola WHERE Distrito = \"Dutra\"";
+            String sql = "SELECT * FROM escola WHERE Distrito = \"CIDADE DUTRA\"";
             st = con.prepareStatement(sql);
             rs = st.executeQuery();
 
@@ -227,7 +227,7 @@ public class operacoesDao {
 
         try {
 
-            String sql = "SELECT * FROM escola WHERE Distrito = \"grajau\"";
+            String sql = "SELECT * FROM escola WHERE Distrito = \"GRAJAU\"";
             st = con.prepareStatement(sql);
             rs = st.executeQuery();
 

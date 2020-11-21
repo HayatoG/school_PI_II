@@ -59,6 +59,9 @@ public class telaInicialCadastroLogin {
                 responsavelMetodos.cadastroResponsavelEmail();
                 responsavelMetodos.cadastroResponsavelTelefone();
                 telaInicial();
+                
+            case 3:
+                telaInicialCadastroLogin.telaInicial();
 
         }
     }
@@ -80,7 +83,7 @@ public class telaInicialCadastroLogin {
             PIZERABRABO.areaResponsavel.areaResponsavel();
         }
         else{
-            System.out.println("Login ou senha inválidos");
+            System.out.println("\nLogin ou senha inválidos");
             telaInicialCadastroLogin.login();
         }
     }

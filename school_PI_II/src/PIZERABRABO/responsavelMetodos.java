@@ -100,7 +100,7 @@ public class responsavelMetodos {
         if (distrito.equalsIgnoreCase("parelheiros")) {
             escolaMetodos.consultaEscolaParelheiros();
             responsavelMetodos.abrirPagina();
-        } else if (distrito.equalsIgnoreCase("dutra")) {
+        } else if (distrito.equalsIgnoreCase("cidadedutra")) {
             escolaMetodos.consultaEscolaDutra();
             responsavelMetodos.abrirPagina();
         } else if (distrito.equalsIgnoreCase("grajau")) {
