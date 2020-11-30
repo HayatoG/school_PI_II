@@ -20,7 +20,7 @@ import java.util.List;
 public class operacoesDao {
 
     private final String USUARIO = "root";
-    private final String SENHA = "carecapi";
+    private final String SENHA = "23045932";
     private final String URL = "jdbc:mysql://localhost:3306/school_pi?useTimezone=true&serverTimezone=UTC&useSSL=false";
     private Connection con = null;
     private PreparedStatement st;

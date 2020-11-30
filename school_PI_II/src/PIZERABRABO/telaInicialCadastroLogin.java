@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
-import javafx.scene.control.PasswordField;
+//import javafx.scene.control.PasswordField;
 
 /**
  *
@@ -33,11 +33,11 @@ public class telaInicialCadastroLogin {
                 + "                                          )_)                    |_|                                                                                  ");
         System.out.println(" \n(1) Fazer login | (2) Cadastrar-se");
         int decisao = s.nextInt();
-        
+
         if (decisao == 1) {
-             telaInicialCadastroLogin.login();
+            telaInicialCadastroLogin.login();
         }
-        if (decisao == 2){
+        if (decisao == 2) {
             telaInicialCadastroLogin.direcaoCadastro();
         }
     }
@@ -59,7 +59,7 @@ public class telaInicialCadastroLogin {
                 responsavelMetodos.cadastroResponsavelEmail();
                 responsavelMetodos.cadastroResponsavelTelefone();
                 telaInicial();
-                
+
             case 3:
                 telaInicialCadastroLogin.telaInicial();
 
@@ -70,9 +70,9 @@ public class telaInicialCadastroLogin {
 
         System.out.println("\nLogin: ");
         String login = s.next();
-        
+
         System.out.println("\nSenha:");
-        String senha = telaInicialCadastroLogin.readPassword("");
+        String senha = s.next();
 
         if (login.equals("adm") && senha.equals("123")) {
             System.out.println("\nLogado!");
@@ -81,14 +81,14 @@ public class telaInicialCadastroLogin {
         if (login.equals("res") && senha.equals("123")) {
             System.out.println("\nLogado!");
             PIZERABRABO.areaResponsavel.areaResponsavel();
-        }
-        else{
+        } else {
             System.out.println("\nLogin ou senha inválidos");
             telaInicialCadastroLogin.login();
         }
     }
+}
 
-    public static String readPassword(String prompt) {
+/*   public static String readPassword(String prompt) {
         EraserThread et = new EraserThread(prompt);
         Thread mask = new Thread(et);
         mask.start();
@@ -106,4 +106,4 @@ public class telaInicialCadastroLogin {
         // return the password entered by the user
         return password;
     }
-}
+}*/

@@ -33,6 +33,7 @@ public class areaResponsavel {
             case 1:
                responsavelMetodos.areaResponsavelConsultaEscola();
             case 2:
+                javaMailApp.Enviar();
                 break;
             case 3:
                 telaInicialCadastroLogin.telaInicial();
